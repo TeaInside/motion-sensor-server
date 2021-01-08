@@ -10,7 +10,7 @@ require BASE_PATH."/isolated/helpers/global.php";
 function myAutoloader($class)
 {
   if (file_exists($f = BASE_PATH."/isolated/classes/"
-      str_replace($class, "\\", "/").".php")) {
+      .str_replace($class, "\\", "/").".php")) {
     require $f;
   }
 }
