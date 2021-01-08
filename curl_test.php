@@ -1,6 +1,6 @@
 <?php
 
-$endpoint = "http://127.0.0.1:8000/insert.php";
+$endpoint = "https://fp-hs.teainside.org/insert.php";
 $ch = curl_init($endpoint);
 curl_setopt_array($ch,
   [
