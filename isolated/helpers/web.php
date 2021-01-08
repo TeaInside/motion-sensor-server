@@ -14,7 +14,7 @@ function e(string $str): string
  */
 function asset(string $str): string
 {
-  return BASE_ASSET_URL."/{$str}";
+  return e(BASE_ASSET_URL."/{$str}");
 }
 
 /**
@@ -22,7 +22,7 @@ function asset(string $str): string
  * @param array  $__vars
  * @return mixed
  */
-function load_view(string $__name, array $__vars)
+function load_view(string $__name, array $__vars = [])
 {
   extract($__vars);
   return require BASE_PATH."/isolated/views/{$__name}.php";
@@ -33,7 +33,7 @@ function load_view(string $__name, array $__vars)
  * @param array  $__vars
  * @return mixed
  */
-function load_api(string $__name, array $__vars)
+function load_api(string $__name, array $__vars = [])
 {
   extract($__vars);
   return require BASE_PATH."/isolated/api/{$__name}.php";
