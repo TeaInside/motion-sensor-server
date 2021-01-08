@@ -16,13 +16,14 @@ function handle_login_action()
       && is_string($_POST["username"])
       && is_string($_POST["password"])) {
 
-    $username = trim($_POST["username"]);
+    $username = strtolower(trim($_POST["username"]));
     $pdo = DB::pdo();
-    $st  = $pdo->prepare("SELECT id, password FROM users WHERE username = ?");
+    $st  = $pdo->prepare("SELECT user_id, password FROM users WHERE username = ?");
     $st->execute([$username]);
     if ($r = $st->fetch(PDO::FETCH_ASSOC)) {
       if (password_verify($_POST["password"], $r["password"])) {
-        $_SESSION["user_id"] = $r["id"];
+        $_SESSION["user_id"]  = $r["user_id"];
+        $_SESSION["username"] = $username;
         return ["status" => "ok", "redirect" => "home.php"];
       }
     }
