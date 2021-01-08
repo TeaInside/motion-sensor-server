@@ -7,5 +7,5 @@ if (!isset($_SESSION["user_id"])) {
 } else if (isset($_GET["action"])) {
   load_api("home");
 } else {
-  load_view("login");
+  load_view("home");
 }
