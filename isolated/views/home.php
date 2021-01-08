@@ -17,7 +17,7 @@
 </div>
 <div id="mainData">
   <div class="drText">
-    <h2>Data realtime monitoring</h2>
+    <h2>30 latest data realtime monitoring</h2>
   </div>
   <table id="tableData" border="1">
   </table>

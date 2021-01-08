@@ -3,7 +3,7 @@
 window.onload = function () {
   let mainData = gid("tableData");
 
-  function getTableData() {
+  function getTableData(cb) {
     let ch = new XMLHttpRequest;
     ch.withCredentials = true;
     ch.onload = function () {
@@ -19,11 +19,15 @@ window.onload = function () {
             '<td>'+json[i].created_at+'</td>'+
           '</tr>';
       }
-      table.innerHTML += r;
+      table.innerHTML = r;
+      setTimeout(cb, 500);
     };
     ch.open("GET", "home.php?action=get_table_data");
     ch.send(null);
   }
 
-  getTableData();
+  let rec = function () {
+    getTableData(rec);
+  }
+  rec();
 };

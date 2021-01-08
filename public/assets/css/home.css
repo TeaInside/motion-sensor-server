@@ -9,14 +9,14 @@
 #mainData {
   background-color: #fff;
   width: 900px;
-  height: 500px;
+  height: 900px;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 300px;
 }
 #tableData {
   margin: auto;
-  margin-top: 70px;
+  margin-top: 20px;
   text-align: center;
   border-collapse: collapse;
 }

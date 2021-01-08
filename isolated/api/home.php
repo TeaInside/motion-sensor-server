@@ -24,7 +24,7 @@ if (isset($_GET["action"]) && is_string($_GET["action"])) {
 function get_table_data()
 {
   $pdo = DB::pdo();
-  $st  = $pdo->prepare("SELECT b.motion_id, a.name, b.created_at FROM devices AS a INNER JOIN motion_history AS b ON a.device_id = b.device_id ORDER BY b.motion_id DESC LIMIT 10");
+  $st  = $pdo->prepare("SELECT b.motion_id, a.name, b.created_at FROM devices AS a INNER JOIN motion_history AS b ON a.device_id = b.device_id ORDER BY b.motion_id DESC LIMIT 30");
   $st->execute();
   return $st->fetchAll(PDO::FETCH_ASSOC);
 }
