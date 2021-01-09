@@ -46,6 +46,7 @@ void loop() {
       tone(PIN_PIEZO, 1000, 500);
     }
   } else {
+    x = 0;
     digitalWrite(PIN_LED, LOW);
   }
 }

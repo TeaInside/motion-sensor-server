@@ -1,7 +1,7 @@
 
 #include <LiquidCrystal.h>
 
-#define PIN_LED   (4)
+#define PIN_LED   (5)
 #define PIN_PIEZO (3)
 #define PIN_INPUT (2)
 
@@ -34,6 +34,7 @@ void loop() {
       tone(PIN_PIEZO, 1000, 500);
     }
   } else {
+    x = 0;
     digitalWrite(PIN_LED, LOW);
   }
 }
